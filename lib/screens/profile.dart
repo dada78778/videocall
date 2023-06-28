@@ -15,7 +15,7 @@ class Profile extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-              height: height * .466,
+              height: height * .475,
               child: Stack(
                 children: [
                   Container(
