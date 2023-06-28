@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.location_on_outlined,color: Colors.black,),
+            Icon(Icons.location_on_outlined,color: Color(0xffe94057)),
             Text("Californiya,us",style: TextStyle(
               color: Colors.black,
             )),
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               ),children: [
                 TextSpan(
                     text: " hapiness",style: TextStyle(
-                  color: Colors.red,fontSize: 20.0,fontWeight: FontWeight.bold,letterSpacing: 2,
+                  color: Color(0xffe94057),fontSize: 20.0,fontWeight: FontWeight.bold,letterSpacing: 2,
                 )
                 )
               ]),textAlign: TextAlign.center,),
@@ -266,7 +266,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: Container(
-        color: Colors.red.withOpacity(.1),
+        color: const Color(0xffe94057).withOpacity(.22),
         height: height * .08,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

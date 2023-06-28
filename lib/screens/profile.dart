@@ -15,7 +15,7 @@ class Profile extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-              height: height * .44,
+              height: height * .466,
               child: Stack(
                 children: [
                   Container(
@@ -23,13 +23,10 @@ class Profile extends StatelessWidget {
                     height: height * .4,
                     width: width,
                     decoration: const BoxDecoration(
-                      // color: Colors.red,
                         image: DecorationImage(
                           image: AssetImage("assets/images/stansman.png"),fit: BoxFit.cover,
                         )
                     ),
-                    // child: Text("here"),
-                    // // child: Image.asset("asset/images/stansman.png"),
                   ),
                   Positioned(
                     top: height * .357,
@@ -63,7 +60,7 @@ class Profile extends StatelessWidget {
                             )
                           ]
                       ),
-                      child: const Icon(Icons.close_outlined,color: Colors.red,size: 30,),
+                      child: const Icon(Icons.close_outlined,color: Color(0xffe94057),size: 30,),
                     ),
                   ),
                   Positioned(
@@ -74,11 +71,11 @@ class Profile extends StatelessWidget {
                       width: width * .21,
                       height: height * .11,
                       decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: const Color(0xffe94057),
                           borderRadius: BorderRadius.circular(40),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.red.withOpacity(.1),
+                              color: const Color(0xffe94057).withOpacity(.1),
                               spreadRadius: 10,
                               blurRadius: 5,
                             )
@@ -146,20 +143,23 @@ class Profile extends StatelessWidget {
                     border: Border.all(color: Colors.black),
                     borderRadius: BorderRadius.circular(13),
                   ),
-                  child: const Icon(Icons.send,color: Colors.black,)),
+                  child: const Icon(Icons.send,color: Color(0xffe94057),)),
             ),
             SizedBox(height: height * .001,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const Expanded(
-                    flex: 4,
+                    flex: 5,
                     child: ListTile(title: Text("Location",style: TextStyle(
                       color: Colors.black,fontSize: 20.0,fontWeight: FontWeight.bold,
                     ),),subtitle: Text("Chicago, IL United States",style: TextStyle(
                       color: Colors.black,fontSize: 16.0,
                     ),),)),
-                Expanded(child: Container(
+                Expanded(
+                    flex: 2,
+                    child: Container(
+                      alignment: Alignment.center,
                   padding: const EdgeInsets.all(5),
                   margin: EdgeInsets.only(right: width * .033),
                   decoration: BoxDecoration(
@@ -167,9 +167,12 @@ class Profile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: const Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
                     children: [
                       Icon(Icons.room_outlined,color: Colors.black),
-                      Text("1 km",style: TextStyle(
+                      Text("20.0K km",style: TextStyle(
                         color: Colors.black,
                       ),)
                     ],
@@ -189,7 +192,7 @@ class Profile extends StatelessWidget {
             Container(
               margin: EdgeInsets.symmetric(horizontal: width * .04),
               alignment: Alignment.centerLeft,
-              child: const Text("My name is Jessica Parker and I enjoy meeting new people and finding ways to help them have an uplifting experience. I enjoy reading..",style: TextStyle(
+              child: const Text("My name is Jessica Parker and I enjoy meeting new people and finding ways to help them have an uplifting experience. I enjoy reading...",style: TextStyle(
                 color: Colors.black,fontSize: 15.0,
               ),),
             ),
@@ -240,16 +243,16 @@ class Profile extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.red,width: width * .004),
+                      border: Border.all(color: const Color(0xffe94057),width: width * .004),
                     ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(width: width * .01),
-                        const Icon(Icons.done_all_outlined,color: Colors.red,),
+                        const Icon(Icons.done_all_outlined,color: Color(0xffe94057),),
                         SizedBox(width: width * .01),
                         const Expanded(child: Text("Books",style: TextStyle(
-                          color: Colors.red,
+                          color: Color(0xffe94057),
                         ),)),
                       ],
                     ),
@@ -260,16 +263,16 @@ class Profile extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.red,width: width * .004),
+                      border: Border.all(color: const Color(0xffe94057),width: width * .004),
                     ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(width: width * .01),
-                        const Icon(Icons.done_all_outlined,color: Colors.red,),
+                        const Icon(Icons.done_all_outlined,color: Color(0xffe94057),),
                         SizedBox(width: width * .01),
                         const Expanded(child: Text("Travel",style: TextStyle(
-                          color: Colors.red,
+                          color: Color(0xffe94057),
                         ),)),
                       ],
                     ),

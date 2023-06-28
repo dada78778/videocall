@@ -25,7 +25,7 @@ class MessagePage extends StatelessWidget {
               border: Border.all(color: Colors.grey,width: .12),
               borderRadius: BorderRadius.circular(12),
             ),
-              child: const Icon(Icons.tune,color: Colors.red,))
+              child: const Icon(Icons.tune,color: Color(0xffe94057)))
         ],
       ),
       body: SingleChildScrollView(
@@ -77,7 +77,7 @@ class MessagePage extends StatelessWidget {
                           Container(
                             padding: const EdgeInsets.all(2),
                             decoration: BoxDecoration(
-                                border: Border.all(width: 3,color: Colors.red),
+                                border: Border.all(width: 3,color: const Color(0xffe94057)),
                               shape: BoxShape.circle,
                             ),
                               child: Image.asset("assets/images/circleimage.png",fit: BoxFit.cover)),
@@ -100,7 +100,7 @@ class MessagePage extends StatelessWidget {
               leading: Container(
                   padding: const EdgeInsets.all(2),
                   decoration: BoxDecoration(
-                    border: Border.all(width: 3,color: Colors.red),
+                    border: Border.all(width: 3,color: const Color(0xffe94057)),
                     shape: BoxShape.circle,
                   ),
                   child: Image.asset("assets/images/circleimage.png",fit: BoxFit.cover)),
@@ -118,7 +118,7 @@ class MessagePage extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: const BoxDecoration(
-                      color: Colors.red,
+                      color: Color(0xffe94057),
                       shape: BoxShape.circle,
                     ),
                     child: const Text("2",style: TextStyle(
@@ -136,7 +136,7 @@ class MessagePage extends StatelessWidget {
               leading: Container(
                   padding: const EdgeInsets.all(2),
                   decoration: BoxDecoration(
-                    border: Border.all(width: 3,color: Colors.red),
+                    border: Border.all(width: 3,color: const Color(0xffe94057)),
                     shape: BoxShape.circle,
                   ),
                   child: Image.asset("assets/images/circleimage.png",fit: BoxFit.cover)),
@@ -154,7 +154,7 @@ class MessagePage extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: const BoxDecoration(
-                      color: Colors.red,
+                      color: Color(0xffe94057),
                       shape: BoxShape.circle,
                     ),
                     child: const Text("2",style: TextStyle(
@@ -172,7 +172,7 @@ class MessagePage extends StatelessWidget {
               leading: Container(
                   padding: const EdgeInsets.all(2),
                   decoration: BoxDecoration(
-                    border: Border.all(width: 3,color: Colors.red),
+                    border: Border.all(width: 3,color: const Color(0xffe94057)),
                     shape: BoxShape.circle,
                   ),
                   child: Image.asset("assets/images/circleimage.png",fit: BoxFit.cover)),
@@ -198,7 +198,7 @@ class MessagePage extends StatelessWidget {
               leading: Container(
                   padding: const EdgeInsets.all(2),
                   decoration: BoxDecoration(
-                    border: Border.all(width: 3,color: Colors.red),
+                    border: Border.all(width: 3,color: const Color(0xffe94057)),
                     shape: BoxShape.circle,
                   ),
                   child: Image.asset("assets/images/circleimage.png",fit: BoxFit.cover)),

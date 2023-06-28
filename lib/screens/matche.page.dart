@@ -92,16 +92,50 @@ class MatchePage extends StatelessWidget {
               ),),
             ),
             Expanded(
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: width * .06,vertical: height * .01),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: const Color(0xffE94057),
-                  borderRadius: BorderRadius.circular(15),
+              child: InkWell(
+                onTap: (){
+                  showDialog(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                      // title: const Text("Alert Dialog Box"),
+                      content: const Column(
+                        children: [
+                          Text('here'),
+                          Text('here'),
+                          Text('here'),
+                          Text('here'),
+                          Text('here'),
+                          Text('here'),
+                        ],
+                      ),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(ctx).pop();
+                          },
+                          child: Container(
+                            color: Colors.green,
+                            padding: const EdgeInsets.all(14),
+                            child: const Text("okay",style: TextStyle(
+                              color: Colors.white,
+                            ),),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: width * .06,vertical: height * .01),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: const Color(0xffE94057),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: const Text("Say hello",style: TextStyle(
+                    color: Colors.white,fontSize: 20.0,
+                  ),),
                 ),
-                child: const Text("Say hello",style: TextStyle(
-                  color: Colors.white,fontSize: 20.0,
-                ),),
               ),
             ),
             Expanded(
