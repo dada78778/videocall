@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class MessagePage extends StatelessWidget {
   const MessagePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('').add_jms().format(now);
+
     final width= MediaQuery.of(context).size.width;
     final height= MediaQuery.of(context).size.height;
     return Scaffold(
@@ -96,36 +101,224 @@ class MessagePage extends StatelessWidget {
               ),),
             ),
             SizedBox(height: height * .02,),
-            ListTile(
-              leading: Container(
-                  padding: const EdgeInsets.all(2),
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 3,color: const Color(0xffe94057)),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Image.asset("assets/images/circleimage.png",fit: BoxFit.cover)),
-              title: const Text("Emelie",style: TextStyle(
-                color: Colors.black,fontWeight: FontWeight.bold,
-              ),),
-              subtitle: const Text("Sticker 😍",style: TextStyle(
-                color: Colors.black,
-              ),),
-              trailing: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Text("23 min"),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: const BoxDecoration(
-                      color: Color(0xffe94057),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                elevation: 0.0,
+              ),
+              onPressed: () {
+                showModalBottomSheet<void>(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Container(
+                      height: height * 1,
+                      padding: const EdgeInsets.all(10),
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: Column(
+                          children:[
+                            ListTile(
+                              title: const Text("Grace",style: TextStyle(
+                                fontSize: 25.0,fontWeight: FontWeight.bold,
+                              ),),
+                              subtitle: const Text("Online"),
+                              leading: Container(
+                                  padding: const EdgeInsets.all(2),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(width: 3,color: const Color(0xffe94057)),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.asset("assets/images/circleimage.png",fit: BoxFit.cover)),
+                              trailing: Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.grey,),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                  child: const Icon(Icons.more_vert_outlined)),
+                            ),
+                            SizedBox(height: height * .03,),
+                            Row(
+                              children: [
+                                Expanded(
+                                  flex:3,
+                                    child: Container(
+                                      width:width,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.grey),
+                                  ),
+                                )),
+                                Expanded(
+                                  flex:1,
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      child: const Text("Today"))),
+                                Expanded(
+                                  flex:3,
+                                    child: Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.grey),
+                                  ),
+                                )),
+                              ],
+                            ),
+                            SizedBox(height: height * .02,),
+                            Row(
+                              children: [
+                                Expanded(
+                                  flex: 3,
+                                    child: Container(
+                                      padding: const EdgeInsets.all(15),
+                                      decoration: const BoxDecoration(
+                                            color: Color(0xfffbf0f1),
+                                        borderRadius: BorderRadius.only(
+                                          bottomRight: Radius.circular(10.0),
+                                          topLeft: Radius.circular(10.0),
+                                          topRight: Radius.circular(10.0),
+                                        )
+                                        ),
+                                      child: const Text("Hi Jake, how are you? I saw on the app that we’ve crossed paths several times this week 😄",style: TextStyle(
+                                        fontSize: 15.0,color: Colors.black,wordSpacing: 1,
+                                      ),),
+                                    )),
+                                const Expanded(child: Text("")),
+                              ],
+                            ),
+                            SizedBox(height: height * .01,),
+                            Row(
+                              children: [
+                                Text(formattedDate),
+                              ],
+                            ),
+                            SizedBox(height: height * .02,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                const Expanded(child: Text("")),
+                                Expanded(
+                                    flex: 3,
+                                    child: Container(
+                                      padding: const EdgeInsets.all(15),
+                                      decoration: const BoxDecoration(
+                                          color: Color(0xfff3f3f3),
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(10.0),
+                                            topLeft: Radius.circular(10.0),
+                                            topRight: Radius.circular(10.0),
+                                          )
+                                      ),
+                                      child: const Text("Haha truly! Nice to meet you Grace! What about a cup of coffee today evening? ☕️ ",style: TextStyle(
+                                        fontSize: 15.0,color: Colors.black,wordSpacing: 1,
+                                      ),),
+                                    )),
+                              ],
+                            ),
+                            SizedBox(height: height * .01,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text("$formattedDate "),
+                                const Icon(Icons.done_all_outlined,color: Color(0xffe94057),)
+                              ],
+                            ),
+                            SizedBox(height: height * .02,),
+                            Row(
+                              children: [
+                                Expanded(
+                                    flex: 3,
+                                    child: Container(
+                                      padding: const EdgeInsets.all(15),
+                                      decoration: const BoxDecoration(
+                                          color: Color(0xfffbf0f1),
+                                          borderRadius: BorderRadius.only(
+                                            bottomRight: Radius.circular(10.0),
+                                            topLeft: Radius.circular(10.0),
+                                            topRight: Radius.circular(10.0),
+                                          )
+                                      ),
+                                      child: const Text("Hi Jake, how are you? I saw on the app that we’ve crossed paths several times this week 😄",style: TextStyle(
+                                        fontSize: 15.0,color: Colors.black,wordSpacing: 1,
+                                      ),),
+                                    )),
+                                const Expanded(child: Text("")),
+                              ],
+                            ),
+                            SizedBox(height: height * .01,),
+                            Row(
+                              children: [
+                                Text(formattedDate),
+                              ],
+                            ),
+
+                            Row(
+                              children: [
+                                Expanded(
+                                  flex: 4,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        border: Border.all(color: Colors.grey),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: TextFormField(
+                                  autofocus: true,
+                                  decoration: const InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: "   your message",
+                                      suffixIcon: Icon(Icons.send_outlined),
+                                  ),
+                                ),
+                                    )),
+                                SizedBox(width: width * .06,),
+                                Expanded(
+                                  flex: 1,
+                                    child: Container(
+                                      padding: const EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(color: Colors.grey),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                        child: const Icon(Icons.mic,size: 30,color: Color(0xffe94057),))),
+                              ],
+                            )
+
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
+              child: ListTile(
+                leading: Container(
+                    padding: const EdgeInsets.all(2),
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 3,color: const Color(0xffe94057)),
                       shape: BoxShape.circle,
                     ),
-                    child: const Text("2",style: TextStyle(
-                      color: Colors.white,
-                    ),),
-                  )
-                ],
+                    child: Image.asset("assets/images/circleimage.png",fit: BoxFit.cover)),
+                title: const Text("Emelie",style: TextStyle(
+                  color: Colors.black,fontWeight: FontWeight.bold,
+                ),),
+                subtitle: const Text("Sticker 😍",style: TextStyle(
+                  color: Colors.black,
+                ),),
+                trailing: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Text("23 min"),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: const BoxDecoration(
+                        color: Color(0xffe94057),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Text("2",style: TextStyle(
+                        color: Colors.white,
+                      ),),
+                    )
+                  ],
+                ),
               ),
             ),
             Container(
