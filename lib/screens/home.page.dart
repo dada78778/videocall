@@ -12,6 +12,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  String defaultValue='California,Us';
+
+  List<String> itemList=['California,Us','Canada','Japan'];
+
   @override
   Widget build(BuildContext context) {
     final width= MediaQuery.of(context).size.width;
@@ -24,15 +28,41 @@ class _HomePageState extends State<HomePage> {
         automaticallyImplyLeading: false,
         leading: Image.asset("assets/images/Menu-Icon.png",scale: 3,),
         centerTitle: true,
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.location_on_outlined,color: Color(0xffe94057)),
-            Text("Californiya,us",style: TextStyle(
-              color: Colors.black,
-            )),
+            SizedBox(width: width * .13),
+            const Icon(Icons.location_on,color: Color(0xffcc1a2e)),
+            Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    DropdownButtonHideUnderline(
+                      child: DropdownButton(
+                          value: defaultValue,
+                          isExpanded: false,
+                          icon: const Icon(Icons.keyboard_arrow_down_outlined,color: Color(0xffcc1a2e)),
+                          style: const TextStyle(
+                            color: Color(0xff0433BD),fontSize: 16.0,
+                          ),
+                          items: itemList.map((String  itemvalue) {
+                            return DropdownMenuItem(
+                              value: itemvalue,
+                              child: Text(itemvalue,style: const TextStyle(
+                                color: Colors.black,fontWeight: FontWeight.bold,
+                              ),));
+                          }).toList(),
+                          onChanged: (String ? newValue){
+                            setState(() {
+                              defaultValue= newValue!;
+                            });
+                          }),
+                    )
+                  ],)),
+            SizedBox(width: width * .1),
           ],
         ),
         actions: [
@@ -40,10 +70,10 @@ class _HomePageState extends State<HomePage> {
               width: width * .1,
               margin: EdgeInsets.symmetric(horizontal: width * .03,vertical: height * .01),
               decoration: BoxDecoration(
-                color: Colors.grey,
+                color: Colors.grey.withOpacity(.2),
                 borderRadius: BorderRadius.circular(11),
               ),
-              child: const Icon(Icons.notifications,color: Colors.black)),
+              child: const Icon(Icons.notifications_outlined,color: Colors.black)),
         ],
       ),
       body: SingleChildScrollView(
@@ -54,24 +84,24 @@ class _HomePageState extends State<HomePage> {
             Container(
               alignment: Alignment.center,
               child: const Text("Interact with",style: TextStyle(
-                color: Colors.black,fontSize: 20.0,fontWeight: FontWeight.bold,letterSpacing: 1,
+                color: Colors.black,fontSize: 23.0,fontWeight: FontWeight.bold,letterSpacing: 1,
               ),),
             ),
             Container(
               alignment: Alignment.center,
               child: RichText(text: const TextSpan(text: "Your",style: TextStyle(
-                color: Colors.black,fontSize: 20.0,fontWeight: FontWeight.bold,letterSpacing: 1,
+                color: Colors.black,fontSize: 25.0,fontWeight: FontWeight.bold,letterSpacing: 1,
               ),children: [
                 TextSpan(
                     text: " hapiness",style: TextStyle(
-                  color: Color(0xffe94057),fontSize: 20.0,fontWeight: FontWeight.bold,letterSpacing: 2,
+                  color: Color(0xffcc1a2e),fontSize: 20.0,fontWeight: FontWeight.bold,letterSpacing: 2,
                 )
                 )
               ]),textAlign: TextAlign.center,),
             ),
             SizedBox(height: height * .04,),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: width * .04),
+              margin: EdgeInsets.symmetric(horizontal: width * .08),
               decoration: BoxDecoration(
                 color: Colors.grey.withOpacity(.2),
                 borderRadius: BorderRadius.circular(30),
@@ -100,74 +130,21 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  for(int i=1;i<=7;i++)
                   Container(
                       margin: EdgeInsets.symmetric(horizontal: width * .03),
                       width: width * .16,
                       child: Column(
                         children: [
-                          Image.asset("assets/images/circleimage.png"),
+                          Container(
+                            padding: const EdgeInsets.all(3),
+                            decoration: BoxDecoration(
+                                    border: Border.all(color: const Color(0xffcc1a2e).withOpacity(.5),width: 3),
+                              shape: BoxShape.circle,
+                              ),
+                              child: Image.asset("assets/images/circleimage.png")),
                           SizedBox(height: height * .01,),
                           const Text("Ally",textAlign: TextAlign.center,style: TextStyle(
-                            color: Colors.black,fontSize: 14.0,
-                          ),),
-                        ],
-                      )),
-                  Container(
-                      margin: EdgeInsets.symmetric(horizontal: width * .03),
-                      width: width * .16,
-                      child: Column(
-                        children: [
-                          Image.asset("assets/images/circleimage.png"),
-                          SizedBox(height: height * .01,),
-                          const Text("Anny",textAlign: TextAlign.center,style: TextStyle(
-                            color: Colors.black,fontSize: 14.0,
-                          ),),
-                        ],
-                      )),
-                  Container(
-                      margin: EdgeInsets.symmetric(horizontal: width * .03),
-                      width: width * .16,
-                      child: Column(
-                        children: [
-                          Image.asset("assets/images/circleimage.png"),
-                          SizedBox(height: height * .01,),
-                          const Text("Marlene",textAlign: TextAlign.center,style: TextStyle(
-                            color: Colors.black,fontSize: 14.0,
-                          ),),
-                        ],
-                      )),
-                  Container(
-                      margin: EdgeInsets.symmetric(horizontal: width * .03),
-                      width: width * .16,
-                      child: Column(
-                        children: [
-                          Image.asset("assets/images/circleimage.png"),
-                          SizedBox(height: height * .01,),
-                          const Text("Marcia",textAlign: TextAlign.center,style: TextStyle(
-                            color: Colors.black,fontSize: 14.0,
-                          ),),
-                        ],
-                      )),
-                  Container(
-                      margin: EdgeInsets.symmetric(horizontal: width * .03),
-                      width: width * .16,
-                      child: Column(
-                        children: [
-                          Image.asset("assets/images/circleimage.png"),
-                          SizedBox(height: height * .01,),
-                          const Text("Joann",textAlign: TextAlign.center,style: TextStyle(
-                            color: Colors.black,fontSize: 14.0,
-                          ),),
-                        ],
-                      )),
-                  Container(
-                      margin: EdgeInsets.symmetric(horizontal: width * .03),
-                      width: width * .16,
-                      child: Column(
-                        children: [
-                          Image.asset("assets/images/circleimage.png"),
-                          SizedBox(height: height * .01,),
-                          const Text("Joann",textAlign: TextAlign.center,style: TextStyle(
                             color: Colors.black,fontSize: 14.0,
                           ),),
                         ],
@@ -175,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: height * .04,),
+            SizedBox(height: height * .03),
             Container(
               margin: EdgeInsets.symmetric(horizontal: width * .03),
               child: Row(
@@ -184,14 +161,14 @@ class _HomePageState extends State<HomePage> {
                   const Expanded(
                       flex: 3,
                       child:  Text('Near You',style: TextStyle(
-                        color: Colors.black,fontWeight: FontWeight.bold,
+                        color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15.0,
                       ))),
                   const Spacer(),
                   Expanded(
                       child: Row(
                         children: [
-                          const Text('View All',style: TextStyle(
-                              color: Colors.black,fontWeight: FontWeight.bold
+                           Text('View All',style: TextStyle(
+                              color: const Color(0xffcc1a2e).withOpacity(.6),fontWeight: FontWeight.bold
                           )),
                           SizedBox(width: width * .01),
                           Image.asset("assets/images/videoview.png",width: width * .04,),
@@ -200,16 +177,16 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: height * .04,),
+            SizedBox(height: height * .02,),
             Container(
               padding: const EdgeInsets.all(10),
               margin: EdgeInsets.symmetric(horizontal: width * .04),
               width: width,
-              height: height * .3,
+              height: height * .35,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: const DecorationImage(
-                    image: AssetImage("assets/images/Rectanglegirl.png"),fit: BoxFit.cover,
+                    image: AssetImage("assets/images/Rectanglegirl.png"),fit: BoxFit.contain,
                   )
               ),
               child: Column(
@@ -217,8 +194,8 @@ class _HomePageState extends State<HomePage> {
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    padding: const EdgeInsets.all(4),
-                    margin: EdgeInsets.only(left: width * .71),
+                    padding: const EdgeInsets.all(5),
+                    margin: EdgeInsets.only(left: width * .61,right: width * .076,top: height * .03),
                     decoration: BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(20),
@@ -265,15 +242,15 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        color: const Color(0xffe94057).withOpacity(.22),
+      bottomNavigationBar: SizedBox(
+        // color: const Color(0xffe94057).withOpacity(.22),
         height: height * .08,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
-            const Icon(Icons.home,color: Colors.grey,),
+            const Icon(Icons.home,color: Color(0xffcc1a2e)),
             InkWell(
               onTap: (){
                 Navigator.of(context).push(

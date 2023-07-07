@@ -70,8 +70,8 @@ class _SplashScreenState extends State<SplashScreen> {
                     )),
                     Container(
                       alignment: Alignment.center,
-                      child: const Text("jion us one socialize wirn \nmillion of people",textAlign: TextAlign.center,style: TextStyle(
-                        fontSize: 20.0,color: Colors.grey,
+                      child: const Text("join us one socialize wirn \nmillion of people",textAlign: TextAlign.center,style: TextStyle(
+                        fontSize: 17.0,color: Colors.grey,
                       ),),
                     ),
                     Container(
@@ -79,6 +79,13 @@ class _SplashScreenState extends State<SplashScreen> {
                       width: width * .9,
                       height: height * .07,
                       decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(.6),
+                            spreadRadius: 0,
+                            blurRadius: 6,
+                          )
+                        ],
                         color: const Color(0xffcc1a2e),
                         borderRadius: BorderRadius.circular(36),
                       ),
@@ -86,6 +93,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         color: Colors.white,fontSize: 20.0,
                       ),),
                     ),
+                    SizedBox(height: height * .03),
                   ],
                 )),
           ],

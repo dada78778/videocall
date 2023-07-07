@@ -21,7 +21,7 @@ class MatchePage extends StatelessWidget {
                 children: [
                   Container(
                     height: height * .54,
-                    color: Colors.green,),
+                    color: Colors.transparent,),
                   Positioned(
                       top: height * .077,
                       left: width * .38,
@@ -30,6 +30,19 @@ class MatchePage extends StatelessWidget {
                         child: Container(
                           height: height * .27,
                           width: width * .45,
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(.3),
+                                spreadRadius: 0,
+                                blurRadius: 100,
+                                offset: const Offset(
+                                  -6,
+                                  10,
+                                )
+                              )
+                            ]
+                          ),
                           alignment: Alignment.center,
                           child: Image.asset("assets/images/photo1.png",fit: BoxFit.cover,),
                         ),
@@ -44,6 +57,19 @@ class MatchePage extends StatelessWidget {
                         height: height * .27,
                         width: width * .53,
                         // color: Colors.red,
+                        decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black.withOpacity(.3),
+                                  spreadRadius: 0,
+                                  blurRadius: 100,
+                                  offset: const Offset(
+                                    6,
+                                    4,
+                                  )
+                              )
+                            ]
+                        ),
                         alignment: Alignment.center,
                         child: Image.asset("assets/images/photo.png",),
                       ),
@@ -81,14 +107,12 @@ class MatchePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: height * .03,),
-            const Expanded(
-              child: Text("It's a match jake!",style: TextStyle(
-                color: Color(0xffE94057),fontSize: 40.0,fontWeight: FontWeight.w800,
-              ),),
-            ),
-            const Expanded(
+             const Text("It's a match jake!",style: TextStyle(
+               color: Color(0xffE94057),fontSize: 40.0,
+             ),),
+             const Expanded(
               child: Text("Start a conversation now with each other",style: TextStyle(
-                color: Colors.black,fontSize: 16.0,
+                color: Colors.black,fontSize: 15.0,
               ),),
             ),
             Expanded(
@@ -158,6 +182,7 @@ class MatchePage extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: height * .05)
           ],
         )
     );
