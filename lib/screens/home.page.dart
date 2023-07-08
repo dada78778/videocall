@@ -131,24 +131,150 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   for(int i=1;i<=7;i++)
-                  Container(
-                      margin: EdgeInsets.symmetric(horizontal: width * .03),
-                      width: width * .16,
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(3),
-                            decoration: BoxDecoration(
-                                    border: Border.all(color: const Color(0xffcc1a2e).withOpacity(.5),width: 3),
-                              shape: BoxShape.circle,
-                              ),
-                              child: Image.asset("assets/images/circleimage.png")),
-                          SizedBox(height: height * .01,),
-                          const Text("Ally",textAlign: TextAlign.center,style: TextStyle(
-                            color: Colors.black,fontSize: 14.0,
-                          ),),
-                        ],
-                      )),
+                  InkWell(
+                    onTap: (){
+                      showDialog(
+                        context: context,
+                        builder: (ctx) => AlertDialog(
+                          content: Column(
+                            children: [
+                              Container(
+                                width: width,
+                                height: height * .8,
+                                decoration: BoxDecoration(
+                                  color: Colors.black.withOpacity(.8),
+                                  borderRadius: BorderRadius.circular(13),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      child: Container(
+                                        height: height * .7,
+                                        width: width,
+                                        decoration: const BoxDecoration(
+                                          borderRadius: BorderRadius.only(
+                                            bottomRight: Radius.circular(15),
+                                            bottomLeft: Radius.circular(15),
+                                          ),
+                                            image: DecorationImage(
+                                              image: AssetImage("assets/images/profileimg.png"),fit: BoxFit.cover,
+                                            )
+                                        )),
+                                    ),
+                                    Positioned(
+                                      bottom: 1,
+                                      child: SizedBox(
+                                        height: 66,
+                                        width: width,
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.only(left: width * .02),
+                                              child: const Text("Jassica, 26",style: TextStyle(
+                                                color: Colors.white,
+                                              ),),
+                                            ),
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                const Row(
+                                                  children: [
+                                                    Icon(Icons.location_on,color: Colors.white),
+                                                    Text(" lithiana, istanbul",maxLines: 2,style: TextStyle(
+                                                      color: Colors.white,
+                                                    ),),
+                                                  ],
+                                                ),
+                                                SizedBox(width: width * .08),
+                                                const Expanded(
+                                                  flex: 1,
+                                                  child: Text("1 km away",style: TextStyle(
+                                                    color: Colors.white,fontSize: 14.0,
+                                                  ),),)
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      top: height * .4,
+                                      right: -1,
+                                      child: Container(
+                                        height: height * .067,
+                                        width: width * .15,
+                                        decoration: const BoxDecoration(
+                                            color: Color(0xffE94057),
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(13),
+                                            bottomLeft: Radius.circular(13),
+                                          )
+                                        ),
+                                        child: const Icon(Icons.favorite,color: Colors.white,size: 35,),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      top: height * .4,
+                                      left: -1,
+                                      child: Container(
+                                        height: height * .067,
+                                        width: width * .15,
+                                        decoration: const BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(13),
+                                              bottomRight: Radius.circular(13),
+                                            )
+                                        ),
+                                        child: const Icon(Icons.close,color: Colors.grey,size: 35,),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                          actions: const <Widget>[
+                            // TextButton(
+                            //   onPressed: () {
+                            //     Navigator.of(ctx).pop();
+                            //   },
+                            //   child: Container(
+                            //     color: Colors.green,
+                            //     padding: const EdgeInsets.all(14),
+                            //     child: const Text("okay",style: TextStyle(
+                            //       color: Colors.white,
+                            //     ),),
+                            //   ),
+                            // ),
+                          ],
+                        ),
+                      );
+                    },
+                    child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: width * .03),
+                        width: width * .16,
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(3),
+                              decoration: BoxDecoration(
+                                      border: Border.all(color: const Color(0xffcc1a2e).withOpacity(.5),width: 3),
+                                shape: BoxShape.circle,
+                                ),
+                                child: Image.asset("assets/images/circleimage.png")),
+                            SizedBox(height: height * .01,),
+                            const Text("Ally",textAlign: TextAlign.center,style: TextStyle(
+                              color: Colors.black,fontSize: 14.0,
+                            ),),
+                          ],
+                        )),
+                  ),
                 ],
               ),
             ),

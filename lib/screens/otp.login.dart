@@ -39,7 +39,7 @@ class OtpLoginPage extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     child: const Text("we have a verification code to your mobile \nnumber +91(9090909090)",style: TextStyle(
-                      color: Colors.white,fontSize: 16.0,
+                      color: Colors.white,fontSize: 15.0,
                     )),
                   ),
                   Pinput(
