@@ -186,15 +186,15 @@ class _HomePageState extends State<HomePage> {
                                                   children: [
                                                     Icon(Icons.location_on,color: Colors.white),
                                                     Text(" lithiana, istanbul",maxLines: 2,style: TextStyle(
-                                                      color: Colors.white,
+                                                      color: Colors.white,fontSize: 12.0,
                                                     ),),
                                                   ],
                                                 ),
-                                                SizedBox(width: width * .08),
+                                                SizedBox(width: width * .04),
                                                 const Expanded(
                                                   flex: 1,
                                                   child: Text("1 km away",style: TextStyle(
-                                                    color: Colors.white,fontSize: 14.0,
+                                                    color: Colors.white,fontSize: 12.0,
                                                   ),),)
                                               ],
                                             )
@@ -336,7 +336,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: width * .04),
+                    margin: EdgeInsets.symmetric(horizontal: width * .04,vertical: height * .03),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,

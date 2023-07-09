@@ -51,7 +51,8 @@ class Profile extends StatelessWidget {
                       height: height * .09,
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(40),
+                          // borderRadius: BorderRadius.circular(40),
+                          shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(.1),
@@ -72,7 +73,8 @@ class Profile extends StatelessWidget {
                       height: height * .11,
                       decoration: BoxDecoration(
                           color: const Color(0xffe94057),
-                          borderRadius: BorderRadius.circular(40),
+                          // borderRadius: BorderRadius.circular(40),
+                          shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
                               color: const Color(0xffe94057).withOpacity(.1),
@@ -93,7 +95,8 @@ class Profile extends StatelessWidget {
                       height: height * .09,
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(40),
+                          // borderRadius: BorderRadius.circular(40),
+                          shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(.1),

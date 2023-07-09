@@ -129,15 +129,15 @@ class MessagePage extends StatelessWidget {
                                                   children: [
                                                     Icon(Icons.location_on,color: Colors.white),
                                                     Text(" lithiana, istanbul",maxLines: 2,style: TextStyle(
-                                                      color: Colors.white,
+                                                      color: Colors.white,fontSize: 12.0,
                                                     ),),
                                                   ],
                                                 ),
-                                                SizedBox(width: width * .08),
+                                                SizedBox(width: width * .04),
                                                 const Expanded(
                                                   flex: 1,
                                                   child: Text("1 km away",style: TextStyle(
-                                                    color: Colors.white,fontSize: 14.0,
+                                                    color: Colors.white,fontSize: 12.0,
                                                   ),),)
                                               ],
                                             )
