@@ -190,7 +190,8 @@ class Profile extends StatelessWidget {
               child: const Text("About",style: TextStyle(
                 fontWeight: FontWeight.bold,fontSize: 20.0,
                 color: Colors.black,
-              ),),
+               ),
+              ),
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: width * .04),
@@ -215,11 +216,12 @@ class Profile extends StatelessWidget {
                 color: Colors.black,fontWeight: FontWeight.bold,fontSize: 17.0,
               )),
             ),
-            SizedBox(height: height * .02,),
+            SizedBox(height: height * .001,),
             Container(
               margin: EdgeInsets.symmetric(horizontal: width * .04),
               child: GridView.count(
                 crossAxisCount: 3,
+                physics: const BouncingScrollPhysics(),
                 crossAxisSpacing: 10,
                 childAspectRatio: 3.0,
                 shrinkWrap: true,
@@ -259,9 +261,6 @@ class Profile extends StatelessWidget {
                         ),)),
                       ],
                     ),
-                    // child: Text("Here",style: TextStyle(
-                    //   color: notifier.darkTheme ? darkBackground : primaryColor,
-                    // ),),
                   ),
                   Container(
                     alignment: Alignment.center,

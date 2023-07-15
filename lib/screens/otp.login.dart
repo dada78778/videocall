@@ -43,6 +43,7 @@ class OtpLoginPage extends StatelessWidget {
                     )),
                   ),
                   Pinput(
+                    autofocus: true,
                     length: 6,
                     defaultPinTheme: PinTheme(
                       textStyle: const TextStyle(
@@ -52,7 +53,6 @@ class OtpLoginPage extends StatelessWidget {
                       height: height * .07,
                       decoration: BoxDecoration(
                         color: const Color(0xfff6f8fa),
-                        border: Border.all(color: const Color.fromRGBO(234, 239, 243, 1)),
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
@@ -72,7 +72,7 @@ class OtpLoginPage extends StatelessWidget {
                       alignment: Alignment.center,
                       child: const Text("Continue",style: TextStyle(
                         color: Colors.white,fontSize: 20.0,
-                      ),),
+                      )),
                     ),
                   )
                 ],

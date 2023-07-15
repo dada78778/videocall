@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
                     DropdownButtonHideUnderline(
                       child: DropdownButton(
                           value: defaultValue,
+
                           isExpanded: false,
                           icon: const Icon(Icons.keyboard_arrow_down_outlined,color: Color(0xffcc1a2e)),
                           style: const TextStyle(
@@ -53,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                               value: itemvalue,
                               child: Text(itemvalue,style: const TextStyle(
                                 color: Colors.black,fontWeight: FontWeight.bold,
-                              ),));
+                              )));
                           }).toList(),
                           onChanged: (String ? newValue){
                             setState(() {
@@ -103,8 +104,15 @@ class _HomePageState extends State<HomePage> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: width * .08),
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(.2),
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(30),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xffcc1a2e).withOpacity(.2),
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                  )
+                ]
               ),
               child: Row(
                 children: [
@@ -124,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: height * .04,),
+            SizedBox(height: height * .04),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -175,7 +183,8 @@ class _HomePageState extends State<HomePage> {
                                               margin: EdgeInsets.only(left: width * .02),
                                               child: const Text("Jassica, 26",style: TextStyle(
                                                 color: Colors.white,
-                                              ),),
+                                                ),
+                                              ),
                                             ),
                                             Row(
                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
