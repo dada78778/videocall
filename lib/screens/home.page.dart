@@ -32,18 +32,18 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(width: width * .13),
+            SizedBox(width: width * .02),
             const Icon(Icons.location_on,color: Color(0xffcc1a2e)),
             Expanded(
+              // flex: 10,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
                     DropdownButtonHideUnderline(
                       child: DropdownButton(
                           value: defaultValue,
-
                           isExpanded: false,
                           icon: const Icon(Icons.keyboard_arrow_down_outlined,color: Color(0xffcc1a2e)),
                           style: const TextStyle(
@@ -51,10 +51,10 @@ class _HomePageState extends State<HomePage> {
                           ),
                           items: itemList.map((String  itemvalue) {
                             return DropdownMenuItem(
-                              value: itemvalue,
-                              child: Text(itemvalue,style: const TextStyle(
-                                color: Colors.black,fontWeight: FontWeight.bold,
-                              )));
+                                value: itemvalue,
+                                child: Text(itemvalue,style: const TextStyle(
+                                  color: Colors.black,fontWeight: FontWeight.bold,
+                                )));
                           }).toList(),
                           onChanged: (String ? newValue){
                             setState(() {
@@ -148,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Container(
                                 width: width,
-                                height: height * .8,
+                                height: height * .74,
                                 decoration: BoxDecoration(
                                   color: Colors.black.withOpacity(.8),
                                   borderRadius: BorderRadius.circular(13),
@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Positioned(
                                       child: Container(
-                                        height: height * .7,
+                                        height: height * .65,
                                         width: width,
                                         decoration: const BoxDecoration(
                                           borderRadius: BorderRadius.only(
@@ -172,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                                     Positioned(
                                       bottom: 1,
                                       child: SizedBox(
-                                        height: 66,
+                                        height: height * .09,
                                         width: width,
                                         child: Column(
                                           mainAxisAlignment: MainAxisAlignment.start,
@@ -298,7 +298,7 @@ class _HomePageState extends State<HomePage> {
                       child:  Text('Near You',style: TextStyle(
                         color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15.0,
                       ))),
-                  const Spacer(),
+                  // const Spacer(),
                   Expanded(
                       child: Row(
                         children: [
@@ -330,44 +330,73 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Container(
                     padding: const EdgeInsets.all(5),
-                    margin: EdgeInsets.only(left: width * .61,right: width * .076,top: height * .03),
+                    margin: EdgeInsets.only(left: width * .61,right: width * .05,top: height * .03),
                     decoration: BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text('2.5k ',style: TextStyle(color: Colors.white,fontSize: 15.0,),),
+                        Text('2.5k ',textAlign: TextAlign.center,style: TextStyle(color: Colors.white,fontSize: 15.0,),),
                         Icon(Icons.favorite_border,color: Colors.white,size:16,),
                       ],
                     ),
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: width * .04,vertical: height * .03),
-                    child: const Row(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
+                        Container(
+                          margin: EdgeInsets.only(left: width * .03),
+                          child: const Text('Ally For You',style: TextStyle(
+                              fontWeight: FontWeight.bold,fontSize: 14.0,color: Colors.white
+                          ),),
+                        ),
+                        SizedBox(height: height * .015),
+                        const Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          // crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text('Ally For You',style: TextStyle(
-                              fontWeight: FontWeight.bold,fontSize: 15.0,color: Colors.white
-                            ),),
-                            Row(
-                              children: [
-                                Icon(Icons.location_on_outlined,color: Colors.white),
-                                Text('Distance ( 32 Km )',style: TextStyle(
-                                  fontWeight: FontWeight.bold,fontSize: 15.0,color: Colors.white
-                                )),
-                              ],
-                            )
+                            Icon(Icons.location_on_outlined,color: Colors.white),
+                            Text('Distance ( 32 Km )',style: TextStyle(
+                                fontWeight: FontWeight.bold,fontSize: 14.0,color: Colors.white
+                            )),
+                            Spacer(),
+                            Text("Singer, Friendly",style: TextStyle(
+                                fontWeight: FontWeight.bold,fontSize: 14.0,color: Colors.white
+                            )),
                           ],
                         ),
-                        Text("Singer, Friendly",style: TextStyle(
-                          fontWeight: FontWeight.bold,fontSize: 15.0,color: Colors.white
-                        )),
+                        // Column(
+                        // children: [
+                        //   Text('Ally For You',style: TextStyle(
+                        //       fontWeight: FontWeight.bold,fontSize: 15.0,color: Colors.white
+                        //   ),),
+                        //   Text('here'),
+                        //   // Row(
+                        //   //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   //   crossAxisAlignment: CrossAxisAlignment.center,
+                        //   //   children: [
+                        //   //     Expanded(child: Column(
+                        //   //       children: [
+                        //           Icon(Icons.location_on_outlined,color: Colors.white),
+                        //           Text('Distance ( 32 Km )',style: TextStyle(
+                        //               fontWeight: FontWeight.bold,fontSize: 15.0,color: Colors.white
+                        //           )),
+                        //   //       ],
+                        //   //     ))
+                        //   //   ],
+                        //   // )
+                        // ],
+                        // ),
+                        // Text("Singer, Friendly",style: TextStyle(
+                        //   fontWeight: FontWeight.bold,fontSize: 15.0,color: Colors.white
+                        // )),
+
                       ],
                     ),
                   )

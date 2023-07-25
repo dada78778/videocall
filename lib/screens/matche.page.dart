@@ -82,9 +82,10 @@ class MatchePage extends StatelessWidget {
                       width: width * .13,
                       height: height * .066,
                       alignment: Alignment.center,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
+                        // borderRadius: BorderRadius.circular(30),
+                        shape: BoxShape.circle,
                       ),
                       child: const Icon(Icons.favorite_outlined,color: Colors.red,),
                     ),
@@ -96,9 +97,10 @@ class MatchePage extends StatelessWidget {
                       width: width * .13,
                       height: height * .066,
                       alignment: Alignment.center,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
+                        // borderRadius: BorderRadius.circular(30),
+                        shape: BoxShape.circle,
                       ),
                       child: const Icon(Icons.favorite_outlined,color: Colors.red,),
                     ),

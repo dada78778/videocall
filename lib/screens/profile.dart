@@ -83,7 +83,7 @@ class Profile extends StatelessWidget {
                             )
                           ]
                       ),
-                      child: const Icon(Icons.favorite,color: Colors.white,size: 50),
+                      child: const Icon(Icons.favorite,color: Colors.white,size: 40),
                     ),
                   ),
                   Positioned(
@@ -118,13 +118,13 @@ class Profile extends StatelessWidget {
                       child: Container(
                         alignment: Alignment.center,
                         width: width * .12,
-                        height: height * .06,
+                        height: height * .064,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.white),
                           borderRadius: BorderRadius.circular(12),
                           color: Colors.white.withOpacity(.3),
                         ),
-                        child: const Icon(Icons.arrow_back_ios,color: Colors.white,size: 30,),
+                        child: Icon(Icons.arrow_back_ios_new,color: Colors.white,size: 30,),
                       ),
                     ),
                   )
@@ -134,7 +134,7 @@ class Profile extends StatelessWidget {
             SizedBox(height: height * .001,),
             ListTile(
               title: const Text("Jassica Parker,23",style: TextStyle(
-                color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20.0,
+                color: Colors.black,fontWeight: FontWeight.bold,fontSize: 19.0,
               ),),
               subtitle: const Text("Proffesional model",style: TextStyle(
                 color: Colors.black,
@@ -155,7 +155,7 @@ class Profile extends StatelessWidget {
                 const Expanded(
                     flex: 5,
                     child: ListTile(title: Text("Location",style: TextStyle(
-                      color: Colors.black,fontSize: 20.0,fontWeight: FontWeight.bold,
+                      color: Colors.black,fontSize: 19.0,fontWeight: FontWeight.bold,
                     ),),subtitle: Text("Chicago, IL United States",style: TextStyle(
                       color: Colors.black,fontSize: 16.0,
                     ),),)),
@@ -163,7 +163,7 @@ class Profile extends StatelessWidget {
                     flex: 2,
                     child: Container(
                       alignment: Alignment.center,
-                  padding: const EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(3),
                   margin: EdgeInsets.only(right: width * .033),
                   decoration: BoxDecoration(
                     color: const Color(0xffE94057).withOpacity(.2),
@@ -172,11 +172,12 @@ class Profile extends StatelessWidget {
                   child: const Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.room_outlined,color: Colors.black),
+                      Icon(Icons.room_outlined,color: Colors.black,size: 20,),
                       Text("20.0K km",style: TextStyle(
                         color: Colors.black,
+                        fontSize: 12.0,
                       ),)
                     ],
                   ),

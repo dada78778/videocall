@@ -35,7 +35,7 @@ class MatchesPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text("This is a list of people who have liked you \nand your matches.",style: TextStyle(
-              fontSize: 18.0,
+              fontSize: 15.0,
             ),),
             SizedBox(height: height * .02,),
             Row(
@@ -74,6 +74,7 @@ class MatchesPage extends StatelessWidget {
                 childAspectRatio: 1/1.2,
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
+                physics: const BouncingScrollPhysics(),
                 children: [
                   Container(
                     decoration: BoxDecoration(
@@ -301,6 +302,7 @@ class MatchesPage extends StatelessWidget {
               shrinkWrap: true,
               childAspectRatio: 1/1.2,
               mainAxisSpacing: 10,
+              physics: const BouncingScrollPhysics(),
               crossAxisSpacing: 10,
               children: [
                 Container(
